@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name"><br><br>
+        <input type="email" id="email" placeholder="Your Email"><br><br>
+        <input type="text" id="subject" placeholder="Subject"><br><br>
+        <textarea id="message" placeholder="Message"></textarea><br><br>
+        <button type="button" onclick="validateForm()">Send Message</button>
+        <p id="errorMessage" class="error"></p>
+    </form>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Clear any previous error message
+            errorMessage.textContent = '';
+
+            // Check if all fields are filled
+            if (!name || !email || !subject || !message) {
+                errorMessage.textContent = "All fields must be filled out.";
+                return false;
+            }
+
+            // Check if the email contains '@' and '.'
+            if (!email.includes('@') || !email.includes('.')) {
+                errorMessage.textContent = "Please enter a valid email address.";
+                return false;
+            }
+
+            // Check if the message contains between 30 and 300 characters
+            if (message.length < 30 || message.length > 300) {
+                errorMessage.textContent = "Message must be between 30 and 300 characters.";
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+        }
+    </script>
+</body>
+</html> -->
+
+<!------------- q2------------->
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Create an array to hold employee objects
+      let employees = [];
+      for (let i = 1; i <= 5; i++) {
+        employees.push({
+          id: i,
+          name: `Employee ${i}`,
+          age: 20 + i,
+          position: `Position ${i}`,
+        });
+      }
+
+      console.log("Employee List:", employees);
+
+      employees.forEach((employee) => {
+        employee.salary = 3000 + employee.id * 500;
+        console.log(
+          `ID: ${employee.id}, Name: ${employee.name}, Age: ${employee.age}, Position: ${employee.position}, Salary: ${employee.salary}`
+        );
+      });
+
+      const specificEmployee = employees.find((emp) => emp.id === 3);
+      console.log("Employee with ID 3:", specificEmployee);
+
+      employees.forEach((emp) => {
+        if (emp.id === 2) {
+          emp.position = "Updated Position";
+        }
+      });
+      console.log("Updated Employee List:", employees);
+    </script>
+  </body>
+</html> -->
+

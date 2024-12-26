@@ -1,0 +1,191 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .employee-card {
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .employee-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .employee-name {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .employee-position {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Team</h1>
+    <div id="team" class="team-container"></div>
+
+    <script>
+        const employees = [
+            {
+                name: "Walter White",
+                position: "Chief Executive Officer",
+                image: "/team-1.jpg"
+            },
+            {
+                name: "Sarah Johnson",
+                position: "Product Manager",
+                image: "/team-2.jpg"
+            },
+            {
+                name: "William Anderson",
+                position: "CTO",
+                image: "/team-3.jpg"
+            },
+            {
+                name: "Amanda Jepson",
+                position: "Accountant",
+                image: "/team-4.jpg"
+            }
+        ];
+
+
+        const teamContainer = document.getElementById("team");
+        for (let i = 0; i < 3; i++) {
+            employees.forEach(employee => {
+                const employeeCard = document.createElement("div");
+                employeeCard.className = "employee-card";
+
+                employeeCard.innerHTML = `
+                    <img src="${employee.image}" alt="${employee.name}">
+                    <div class="employee-name">${employee.name}</div>
+                    <div class="employee-position">${employee.position}</div>
+                `;
+                teamContainer.appendChild(employeeCard);
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-------- q2 ------------>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Enter Your Exam Grade</h1>
+        <form id="gradeForm">
+            <input type="number" id="gradeInput" placeholder="Enter your grade" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="result" id="resultMessage"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('gradeForm');
+        const gradeInput = document.getElementById('gradeInput');
+        const resultMessage = document.getElementById('resultMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const grade = parseInt(gradeInput.value);
+            let message = '';
+            if (grade >= 90) {
+                message = "Excellent! You got an A.";
+            } else if (grade >= 80) {
+                message = "Great job! You got a B.";
+            } else if (grade >= 70) {
+                message = "Good effort! You got a C.";
+            } else if (grade >= 60) {
+                message = "You passed! You got a D.";
+            } else if (grade >= 0) {
+                message = "Unfortunately, you failed. You got an F.";
+            } else {
+                message = "Invalid grade. Please enter a number between 0 and 100.";
+            }
+            resultMessage.textContent = message;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    background-color: blue;
+}
+
+.navbar a {
+    flex: 1;    
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: darkblue;
+}
+
+.navbar a:first-child {
+    background-color: black;
+}

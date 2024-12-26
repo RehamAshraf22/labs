@@ -1,0 +1,74 @@
+<!---------------q3----------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .counter-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .counter-container h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .counter-container p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-container">
+        <h1>Visitor Counter</h1>
+        <p>You have visited this page <span id="visitCount">0</span> times.</p>
+    </div>
+
+    <script>
+        // Check if LocalStorage is supported
+        if (typeof(Storage) !== "undefined") {
+            // Access or initialize the visit count
+            const visitCountKey = 'visitCount';
+            let visitCount = localStorage.getItem(visitCountKey);
+
+            if (visitCount === null) {
+                visitCount = 1; // First visit
+            } else {
+                visitCount = parseInt(visitCount) + 1; // Increment count
+            }
+
+            // Save the updated visit count in LocalStorage
+            localStorage.setItem(visitCountKey, visitCount);
+
+            // Display the visit count in the UI
+            document.getElementById('visitCount').textContent = visitCount;
+
+            // Print the visit count in the console
+            console.log(`Visitor count: ${visitCount}`);
+        } else {
+            // If LocalStorage is not supported
+            document.getElementById('visitCount').textContent = "LocalStorage is not supported in this browser.";
+            console.log("LocalStorage is not supported in this browser.");
+        }
+    </script>
+</body>
+</html>

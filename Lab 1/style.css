@@ -1,0 +1,42 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    height: 100vh;
+    background: url(/Reigate_School_Home_1.jpg) no-repeat center center/cover;
+}
+
+.container {
+    text-align: center;
+}
+
+h1, h2 {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.button a{
+    display: inline-block;
+    text-decoration: none;
+    font-family: 1rem;
+    color: white;
+    padding: 10px;
+    margin: 0 10px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    border: 2px solid white;
+    transition: transform 0.3s ,background-color 0.3s;
+
+}
+.button a:hover{
+    background-color: rgb(165, 101, 224);
+    transform: scale(1.1);
+} */

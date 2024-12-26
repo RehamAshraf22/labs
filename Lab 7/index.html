@@ -1,0 +1,171 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        // JavaScript to dynamically add images
+        const gallery = document.getElementById('gallery');
+        const images = [
+            './camping-1.jpg',
+            './camping-2.jpg',
+            './camping-3.jpg',
+            './camping-4.jpg',
+            './camping-5.jpg',
+            './camping-6.jpg'
+        ];
+
+        // Repeat images using JavaScript
+        for (let i = 0; i < 6; i++) {
+            const img = document.createElement('img');
+            img.src = images[i % images.length]; // Repeat images if needed
+            img.alt = `Gallery Image ${i + 1}`;
+            gallery.appendChild(img);
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!---------------q2---------------->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Two Numbers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Two Numbers</h1>
+        <form id="sumForm">
+            <input type="number" id="num1" placeholder="Enter first number" required>
+            <input type="number" id="num2" placeholder="Enter second number" required>
+            <button type="submit">Add</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('sumForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                const sum = num1 + num2;
+                resultDiv.textContent = `Result: ${sum}`;
+            } else {
+                resultDiv.textContent = 'Please enter valid numbers.';
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+
