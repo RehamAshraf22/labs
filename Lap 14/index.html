@@ -1,0 +1,186 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniStore</title>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">MiniStore.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="slider" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Your Products <br> Are Great.</h1>
+                    <a href="#" class="btn btn-dark mt-3">Shop Product</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="/watch.png" alt="Watch" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Mobile Products</h2>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="/product-item3.jpg" class="card-img-top" alt="iPhone 10">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">iPhone 10</h5>
+                            <p class="text-primary">$980</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="/product-item4.jpg" class="card-img-top" alt="iPhone 11">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">iPhone 11</h5>
+                            <p class="text-primary">$1100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="/product-item5.jpg" class="card-img-top" alt="iPhone 8">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">iPhone 8</h5>
+                            <p class="text-primary">$780</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <img src="/product-item1.jpg" class="card-img-top" alt="iPhone 13">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">iPhone 13</h5>
+                            <p class="text-primary">$1500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Age Calculator</h2>
+        <form id="ageForm">
+            <input type="number" id="day" placeholder="Date" required>
+            <input type="number" id="month" placeholder="Month" required>
+            <input type="number" id="year" placeholder="Year" required>
+            <button type="button" onclick="calculateAge()">Submit</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateAge() {
+            const day = parseInt(document.getElementById('day').value);
+            const month = parseInt(document.getElementById('month').value);
+            const year = parseInt(document.getElementById('year').value);
+
+            const today = new Date();
+            const currentDay = today.getDate();
+            const currentMonth = today.getMonth() + 1; // Months are 0-based
+            const currentYear = today.getFullYear();
+
+            let ageYear = currentYear - year;
+            let ageMonth = currentMonth - month;
+            let ageDay = currentDay - day;
+
+            if (ageDay < 0) {
+                ageDay += new Date(currentYear, currentMonth - 1, 0).getDate();
+                ageMonth--;
+            }
+
+            if (ageMonth < 0) {
+                ageMonth += 12;
+                ageYear--;
+            }
+
+            document.getElementById('result').textContent = `Your Age is ${ageYear} Years ${ageMonth} Months ${ageDay} Days`;
+        }
+    </script>
+</body>
+</html>

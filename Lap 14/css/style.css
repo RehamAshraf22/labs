@@ -1,0 +1,22 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+#slider {
+    background-color: #f8f9fa;
+}
+
+#slider h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#slider img {
+    max-width: 100%;
+    height: auto;
+}
+
+#products .card img {
+    max-height: 200px;
+    object-fit: cover;
+}
